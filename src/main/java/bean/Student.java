@@ -3,7 +3,6 @@ package bean;
 public class Student {
 
     private int id;
-    private String no;
     private String name;
     private int sex;
     private int age;
@@ -12,8 +11,8 @@ public class Student {
     public Student() {
     }
 
-    public Student(String no, String name, int sex, int age, String dept) {
-        this.no = no;
+    public Student(int id, String name, int sex, int age, String dept) {
+        this.id = id;
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -24,7 +23,6 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", no='" + no + '\'' +
                 ", name='" + name + '\'' +
                 ", sex=" + sex +
                 ", age=" + age +
@@ -32,12 +30,12 @@ public class Student {
                 '}';
     }
 
-    public String getNo() {
-        return no;
+    public int getId() {
+        return id;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

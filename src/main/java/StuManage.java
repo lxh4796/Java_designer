@@ -57,11 +57,11 @@ public class StuManage {
         String continute;
         do {
             Scanner s = new Scanner(System.in);
-            String no, name, dept;
-            int sex, age;
+            String name, dept;
+            int id, sex, age;
             System.out.println("====新增学生====");
             System.out.println("学号：");
-            no = s.next();
+            id = s.nextInt();
             System.out.println("姓名：");
             name = s.next();
             System.out.println("性别：");
@@ -71,7 +71,7 @@ public class StuManage {
             System.out.println("系别：");
             dept = s.next();
 
-            Student stu = new Student(no, name, sex, age, dept);
+            Student stu = new Student(id, name, sex, age, dept);
             StudentDao dao = new StudentDao();
             boolean ok = dao.create(stu);
             if (ok) {
@@ -88,26 +88,26 @@ public class StuManage {
     //删除学生信息
     public void myDelete() {
         Scanner s = new Scanner(System.in);
-        String no;
+        int id;
         System.out.println("====删除学生====");
         System.out.println("请输入要删除的学生学号：");
-        no = s.next();
+        id = s.nextInt();
         System.out.println("该学生的信息如下：");
 
         StudentDao stuDao = new StudentDao();
-        System.out.println("学生学号：" + stuDao.retrieveById(no).getNo());
-        System.out.println("学生姓名：" + stuDao.retrieveById(no).getName());
-        System.out.println("学生性别：" + stuDao.retrieveById(no).getSex());
-        System.out.println("学生年龄：" + stuDao.retrieveById(no).getAge());
-        System.out.println("学生系别：" + stuDao.retrieveById(no).getDept());
+        System.out.println("学生学号：" + stuDao.retrieveById(id).getId());
+        System.out.println("学生姓名：" + stuDao.retrieveById(id).getName());
+        System.out.println("学生性别：" + stuDao.retrieveById(id).getSex());
+        System.out.println("学生年龄：" + stuDao.retrieveById(id).getAge());
+        System.out.println("学生系别：" + stuDao.retrieveById(id).getDept());
 
         System.out.println("是否真的删除(y/n)：");
         Scanner scanner3 = new Scanner(System.in);
         String x = scanner3.next();
         if (x.equals("y")) {
-            Student stu = new Student(no, null, 0, 0, null);
+            Student stu = new Student(id, null, 0, 0, null);
             StudentDao dao = new StudentDao();
-            boolean ok = dao.deleteById(no);
+            boolean ok = dao.deleteById(id);
             if (ok) {
                 System.out.println("删除成功！");
             } else {
@@ -119,17 +119,17 @@ public class StuManage {
     //修改学生信息
     public void myUpdate() {
         Scanner s = new Scanner(System.in);
-        String no;
+        int id;
         System.out.println("====修改学生====");
         System.out.println("请输入要修改的学生学号：");
-        no = s.next();
+        id = s.nextInt();
         System.out.println("该学生的信息如下：");
         StudentDao stuDao = new StudentDao();
-        System.out.println("学生学号：" + stuDao.retrieveById(no).getNo());
-        System.out.println("学生姓名：" + stuDao.retrieveById(no).getName());
-        System.out.println("学生性别：" + stuDao.retrieveById(no).getSex());
-        System.out.println("学生年龄：" + stuDao.retrieveById(no).getAge());
-        System.out.println("学生系别：" + stuDao.retrieveById(no).getDept());
+        System.out.println("学生学号：" + stuDao.retrieveById(id).getId());
+        System.out.println("学生姓名：" + stuDao.retrieveById(id).getName());
+        System.out.println("学生性别：" + stuDao.retrieveById(id).getSex());
+        System.out.println("学生年龄：" + stuDao.retrieveById(id).getAge());
+        System.out.println("学生系别：" + stuDao.retrieveById(id).getDept());
 
         System.out.println("请输入新的学生信息：");
         Scanner stuUp = new Scanner(System.in);
@@ -143,7 +143,7 @@ public class StuManage {
         age = stuUp.nextInt();
         System.out.println("学生系别：");
         dept = stuUp.next();
-        Student stu = new Student(no, name, sex, age, dept);
+        Student stu = new Student(id, name, sex, age, dept);
         StudentDao dao = new StudentDao();
         boolean ok = dao.update(stu);
         if (ok) {
@@ -162,7 +162,7 @@ public class StuManage {
         StudentDao stuDao = new StudentDao();
         List<Student> list = stuDao.retrieve();
         for (Student stuList : list) { //循环打印出查询结果
-            System.out.println(stuList.getNo() + "\t" + stuList.getName() + "\t" + stuList.getSex() + "\t" + stuList.getAge() + "\t" + stuList.getDept());
+            System.out.println(stuList.getId() + "\t" + stuList.getName() + "\t" + stuList.getSex() + "\t" + stuList.getAge() + "\t" + stuList.getDept());
         }
         System.out.println("************************");
     }

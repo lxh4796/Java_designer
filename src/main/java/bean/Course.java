@@ -3,18 +3,17 @@ package bean;
 public class Course {
 
     private int id;
-    private String no;
     private String name;
-    private String pNo;
+    private int preId;
     private int credit;
 
     public Course() {
     }
 
-    public Course(String no, String name, String pNo, int credit) {
-        this.no = no;
+    public Course(int id, String name, int preId, int credit) {
+        this.id = id;
         this.name = name;
-        this.pNo = pNo;
+        this.preId = preId;
         this.credit = credit;
     }
 
@@ -22,19 +21,18 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "id=" + id +
-                ", no='" + no + '\'' +
                 ", name='" + name + '\'' +
-                ", pNo='" + pNo + '\'' +
+                ", preId=" + preId +
                 ", credit=" + credit +
                 '}';
     }
 
-    public String getNo() {
-        return no;
+    public int getId() {
+        return id;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,12 +43,12 @@ public class Course {
         this.name = name;
     }
 
-    public String getpNo() {
-        return pNo;
+    public int getPreId() {
+        return preId;
     }
 
-    public void setpNo(String pNo) {
-        this.pNo = pNo;
+    public void setPreId(int preId) {
+        this.preId = preId;
     }
 
     public int getCredit() {
