@@ -1,4 +1,4 @@
-package dao;
+package dao.utils;
 
 public class JDBCConstants {
 

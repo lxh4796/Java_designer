@@ -1,4 +1,6 @@
-package dao;
+package dao.utils;
+
+import dao.utils.JDBCConstants;
 
 import java.sql.*;
 

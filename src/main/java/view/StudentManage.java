@@ -1,10 +1,12 @@
+package view;
+
 import bean.Student;
 import dao.StudentDao;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class StuManage {
+public class StudentManage {
     public void menu() {
         //1.打印菜单
         //2.输入菜单

@@ -3,17 +3,17 @@ package bean;
 public class StudentCourse {
 
     private int id;
-    private int studentNo;
-    private int courseNo;
+    private int studentId;
+    private int courseId;
     private int grade;
 
     public StudentCourse() {
     }
 
-    public StudentCourse(int id, int studentNo, int courseNo, int grade) {
+    public StudentCourse(int id, int studentId, int courseId, int grade) {
         this.id = id;
-        this.studentNo = studentNo;
-        this.courseNo = courseNo;
+        this.studentId = studentId;
+        this.courseId = courseId;
         this.grade = grade;
     }
 
@@ -21,8 +21,8 @@ public class StudentCourse {
     public String toString() {
         return "StudentCourse{" +
                 "id=" + id +
-                ", studentNo=" + studentNo +
-                ", courseNo=" + courseNo +
+                ", studentId=" + studentId +
+                ", courseId=" + courseId +
                 ", grade=" + grade +
                 '}';
     }
@@ -35,20 +35,20 @@ public class StudentCourse {
         this.id = id;
     }
 
-    public int getStudentNo() {
-        return studentNo;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setStudentNo(int studentNo) {
-        this.studentNo = studentNo;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
-    public int getCourseNo() {
-        return courseNo;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourseNo(int courseNo) {
-        this.courseNo = courseNo;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
     public int getGrade() {
